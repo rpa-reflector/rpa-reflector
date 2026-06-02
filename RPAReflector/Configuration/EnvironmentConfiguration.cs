@@ -1,4 +1,7 @@
-﻿using System.Configuration;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System.Configuration;
 using System;
 
 namespace RPAReflector
@@ -84,4 +87,4 @@ namespace RPAReflector
             return ConfigurationManager.GetSection("environmentsSection") as EnvironmentsSection;
         }
     }
-}
+}

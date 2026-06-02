@@ -1,4 +1,7 @@
-﻿namespace RPAReflector
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+namespace RPAReflector
 {
     using Microsoft.Owin;
     using System;

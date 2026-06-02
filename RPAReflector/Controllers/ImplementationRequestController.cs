@@ -1,4 +1,7 @@
-﻿
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -195,4 +198,4 @@ namespace RPAReflector.Controllers
             return BuildErrorResponse(dmeEx ?? ex, System.Net.HttpStatusCode.InternalServerError);
         }
     }
-}
+}

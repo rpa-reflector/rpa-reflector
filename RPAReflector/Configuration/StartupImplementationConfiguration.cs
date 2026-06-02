@@ -1,4 +1,7 @@
-﻿using System.Configuration;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System.Configuration;
 
 namespace RPAReflector
 {
@@ -67,4 +70,4 @@ namespace RPAReflector
             return ConfigurationManager.GetSection("startupImplementationsSection") as StartupImplementationsSection;
         }
     }
-}
+}

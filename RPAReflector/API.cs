@@ -1,4 +1,7 @@
-﻿using Microsoft.Owin;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using Microsoft.Owin;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.Host.HttpListener;
 using Microsoft.Owin.StaticFiles;
@@ -91,4 +94,4 @@ namespace RPAReflector
             }
         }
     }
-}
+}

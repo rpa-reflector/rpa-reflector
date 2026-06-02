@@ -1,4 +1,7 @@
-﻿using System;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Configuration;
@@ -201,4 +204,4 @@ namespace RPAReflector
             EventLog.WriteEntry(Program.EventSource, logMsg, EventLogEntryType.Information);
         }
     }
-}
+}

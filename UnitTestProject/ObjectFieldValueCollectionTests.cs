@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RPAReflector;
 using System.IO;

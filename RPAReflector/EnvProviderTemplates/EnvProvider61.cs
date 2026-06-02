@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
 using System;
 using ChipSoft.Publics.DD;
 using ChipSoft.FCL.Base;
