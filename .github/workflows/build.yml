@@ -11,7 +11,10 @@ on:
     branches:
       - master
     tags:
-      - '*'
+      - '*'  
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
@@ -29,14 +32,26 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore RPAReflector.sln
 
+      - name: Determine version
+        id: version
+        shell: bash
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            VERSION="0.0.0"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
       - name: Build
-        run: msbuild RPAReflector.sln /p:Configuration=Release /p:Platform="Any CPU"
+        run: msbuild RPAReflector.sln /p:Configuration=Release /p:Platform="Any CPU" /p:AssemblyVersion=${{ steps.version.outputs.version }} /p:FileVersion=${{ steps.version.outputs.version }}
 
       - name: Upload artifacts
+        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ github.ref_name }}
           path: |
             RPAReflector/bin/**/RPAReflector.*
             RPAReflector/bin/**/*.dll
-          retention-days: 400
+          retention-days: 90
