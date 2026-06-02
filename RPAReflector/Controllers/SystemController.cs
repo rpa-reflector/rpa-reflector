@@ -1,4 +1,7 @@
-﻿using System;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
@@ -247,4 +250,4 @@ namespace RPAReflector.Controllers
             });
         }
     }
-}
+}

@@ -1,4 +1,7 @@
-﻿using System;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System;
 using System.ServiceProcess;
 using System.Timers;
 using Microsoft.Owin.Hosting;
@@ -48,4 +51,4 @@ namespace RPAReflector
             _cleanupTimer.Dispose();
         }
     }
-}
+}

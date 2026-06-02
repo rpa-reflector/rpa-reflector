@@ -1,4 +1,7 @@
-﻿using System.Reflection;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,4 +36,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.2.7.0")]
-[assembly: AssemblyFileVersion("0.2.7.0")]
+[assembly: AssemblyFileVersion("0.2.7.0")]

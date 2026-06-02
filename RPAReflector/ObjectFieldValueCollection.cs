@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Schema;
 using System.Xml;
@@ -59,4 +62,4 @@ namespace RPAReflector
             }
         }
     }
-}
+}

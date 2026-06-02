@@ -1,4 +1,7 @@
-﻿
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+
 using System.Collections.Generic;
 using System.Diagnostics;
 using System;

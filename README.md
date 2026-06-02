@@ -10,6 +10,13 @@ RPA .NET Reflector can also run in **mock mode** with no HiX installation presen
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+This project is moving towards [REUSE compliance](https://reuse.software/). All source files are being annotated with SPDX license and copyright headers:
+
+```
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+```
+
 ## Third-Party Dependencies
 
 See [DEPENDENCIES.md](DEPENDENCIES.md) for a full list of third-party NuGet packages and their licenses.

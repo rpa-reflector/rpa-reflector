@@ -1,4 +1,7 @@
-﻿using System;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System;
 using System.IO;
 using System.Text;
 using System.Diagnostics;
@@ -92,4 +95,4 @@ namespace RPAReflector
 
         }
     }
-}
+}

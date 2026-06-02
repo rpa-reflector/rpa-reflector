@@ -1,4 +1,7 @@
-﻿using System;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -108,4 +111,4 @@ namespace RPAReflector
             return "^(" + string.Join("|", patterns.Select(p => Regex.Escape(p).Replace("\\*", ".*"))) + ")$";
         }
     }
-}
+}

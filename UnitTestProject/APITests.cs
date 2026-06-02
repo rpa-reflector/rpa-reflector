@@ -1,4 +1,7 @@
-﻿using RPAReflector;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using RPAReflector;
 using Microsoft.Owin.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
@@ -56,4 +59,4 @@ namespace UnitTestProject
             }
         }
     }
-}
+}

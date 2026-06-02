@@ -1,4 +1,7 @@
-﻿using System;
+// SPDX-FileCopyrightText: 2026 Reflector Maintainers
+// SPDX-License-Identifier: MIT
+
+using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Configuration.Install;
@@ -175,4 +178,4 @@ namespace RPAReflector
             return Array.Exists(ServiceController.GetServices(), s => s.ServiceName == serviceName);
         }
     }
-}
+}
