@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPAReflector", "RPAReflector\RPAReflector.csproj", "{64516046-9DF6-43B2-8BC1-8E949F29C6C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{A00D83D8-0DC6-4E2E-ADDF-5389C1E98D52}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RPAReflectorInstaller", "RPAReflectorInstaller\RPAReflectorInstaller.vdproj", "{D50CF231-92D4-4706-A943-3A725365B2CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64516046-9DF6-43B2-8BC1-8E949F29C6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64516046-9DF6-43B2-8BC1-8E949F29C6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64516046-9DF6-43B2-8BC1-8E949F29C6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64516046-9DF6-43B2-8BC1-8E949F29C6C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A00D83D8-0DC6-4E2E-ADDF-5389C1E98D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A00D83D8-0DC6-4E2E-ADDF-5389C1E98D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A00D83D8-0DC6-4E2E-ADDF-5389C1E98D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A00D83D8-0DC6-4E2E-ADDF-5389C1E98D52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D50CF231-92D4-4706-A943-3A725365B2CC}.Debug|Any CPU.ActiveCfg = Debug
+		{D50CF231-92D4-4706-A943-3A725365B2CC}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0838D0A-4699-4A74-BD16-DE4F8D255ECD}
+	EndGlobalSection
+EndGlobal

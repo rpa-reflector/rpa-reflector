@@ -1,0 +1,42 @@
+# RPA .NET Reflector — GitHub Actions CI pipeline
+#
+# Prerequisites:
+#   - Runs on GitHub-hosted Windows runner (windows-latest)
+#   - MSBuild and NuGet are set up automatically via actions
+
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore RPAReflector.sln
+
+      - name: Build
+        run: msbuild RPAReflector.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.repository.name }}-${{ github.ref_name }}
+          path: |
+            RPAReflector/bin/**/RPAReflector.*
+            RPAReflector/bin/**/*.dll
+          retention-days: 400
