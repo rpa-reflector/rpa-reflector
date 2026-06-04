@@ -1,5 +1,7 @@
 # RPA .NET Reflector
 
+RPA .NET Reflector is a lightweight integration bridge that enables controlled interaction with ChipSoft HiX EMR systems from RPA or external automation environments. It is designed to run inside hospital infrastructures and supports both real and mock execution scenarios.
+
 RPA .NET Reflector is a reflection-based integration bridge between RPA systems and ChipSoft HiX (versions 6.1, 6.2, and 6.3). It is not statically linked to any HiX .NET assembly; instead it fully relies on .NET reflection to discover and load the required assemblies at runtime.
 
 Out of the box, RPA Reflector offers object/property retrieval by object-id through a simple HTTP API. For more advanced scenarios, C# *implementation modules* can be dynamically compiled against the installed HiX version and expose an XML request/response interface. These modules can create and populate custom data models by calling ChipSoft Logics and assemblies.
