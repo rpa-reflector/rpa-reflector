@@ -3,6 +3,19 @@
 # Prerequisites:
 #   - Runs on GitHub-hosted Windows runner (windows-latest)
 #   - MSBuild and NuGet are set up automatically via actions
+#
+# Code signing (tagged builds only) uses Azure Artifact Signing, authenticating with a
+# service principal client secret (no OIDC/federated credential). One-time setup outside
+# this repo:
+#   1. Provision an Azure Trusted Signing / Artifact Signing account and certificate profile.
+#   2. Create (or reuse) a Microsoft Entra app registration and grant it the
+#      "Certificate Profile Signer" role on the certificate profile.
+#   3. Create a client secret for that app registration (Entra ID > App registrations >
+#      Certificates & secrets > Client secrets) and record its expiry — it will need to be
+#      rotated in the AZURE_CLIENT_SECRET repository secret before it expires.
+#   4. Add repository secrets: AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_CLIENT_SECRET.
+#   5. Add repository variables (not secret, just identifiers): AZURE_SIGNING_ENDPOINT,
+#      AZURE_SIGNING_ACCOUNT_NAME, AZURE_SIGNING_CERTIFICATE_PROFILE.
 
 name: Build
 
@@ -11,10 +24,13 @@ on:
     branches:
       - master
     tags:
-      - '*'  
+      - '*'
   pull_request:
     branches:
       - master
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -45,6 +61,26 @@ jobs:
 
       - name: Build
         run: msbuild RPAReflector.sln /p:Configuration=Release /p:Platform="Any CPU" /p:AssemblyVersion=${{ steps.version.outputs.version }} /p:FileVersion=${{ steps.version.outputs.version }}
+
+      - name: Sign RPAReflector.exe (Azure Artifact Signing)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: azure/artifact-signing-action@v2
+        with:
+          endpoint: ${{ vars.AZURE_SIGNING_ENDPOINT }}
+          signing-account-name: ${{ vars.AZURE_SIGNING_ACCOUNT_NAME }}
+          certificate-profile-name: ${{ vars.AZURE_SIGNING_CERTIFICATE_PROFILE }}
+          azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          azure-client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          files-folder: ${{ github.workspace }}\RPAReflector\bin\Release
+          # Filtered to .exe only: the output folder also holds third-party NuGet
+          # dependency DLLs, which we don't own and shouldn't re-sign. Add "dll" here
+          # (or narrow files-folder to a staging dir) if a first-party DLL is added later.
+          files-folder-filter: exe
+          files-folder-recurse: false
+          file-digest: SHA256
+          timestamp-rfc3161: http://timestamp.acs.microsoft.com
+          timestamp-digest: SHA256
 
       - name: Upload artifacts
         if: startsWith(github.ref, 'refs/tags/')
